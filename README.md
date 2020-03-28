@@ -1,4 +1,4 @@
-# SQL_Advanced_Storage_and_Retrieval_with_SQL_alchemcy_and_flask
+# SQL_Advanced_Storage_and_Retrieval_with_SQL_alchemy_and_flask
 
 ## Overview
 This project uses Python and SQLalchemy to do basic climate analysis and data exploration of a sqlite climate database and excel data from Hawaii. Analysis results are in the jupyter notebook file with select results saved in the Images folder including charts showing the frequency of temperatures, the precipitation by date, and the average, max, and minimum temperature of a trip. 
