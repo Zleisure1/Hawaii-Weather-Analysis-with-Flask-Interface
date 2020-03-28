@@ -4,15 +4,18 @@ import os
 
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, sessionmaker, scoped_session
 from sqlalchemy import create_engine, func
+from sqlalchemy.pool import SingletonThreadPool, NullPool
 
 from flask import Flask, jsonify
+from flask_sqlalchemy import SQLAlchemy
 
 # Database Setup
 #################################################
-engine = create_engine("sqlite:///Resources/hawaii.sqlite")
+engine = create_engine("sqlite:///Resources/hawaii.sqlite", connect_args={'check_same_thread': False}, echo=True) #poolclass=SingletonThreadPool), 
 #engine = create_engine(os.path.join("sqlite:///","Resources","hawaii.sqlite"),echo=False)
+
 # reflect an existing database into a new model
 Base = automap_base()
 # reflect the tables
